@@ -19,7 +19,7 @@ app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 def index():
     return render_template("index.html", public_url=public_url)
 
-@app.route('/guessface', methods=['POST'])
+@app.route('/face-recog', methods=['POST'])
 def faceRecog():
     # check if the post request has the file part
     file = request.files['file']

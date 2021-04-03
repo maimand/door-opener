@@ -1,0 +1,37 @@
+hardware:
+
+- module camera, hồng ngoại sensor : tested
+- RFID: investigating
+- Rervo motor: in testing
+
+Estimated progress: 30%
+
+------------------------------------------------------
+software:
+
+Flask app (API): in progress (70%)
+heroku deploying: in progress (50%) (still have troubles when deploying on internet)
+
+Firebase realtime database: Done
+
+Mobile app: in backlog
+
+Estimated progress : 50% 
+
+------------------------------------------------------
+Total progress: 40%
+Estimate time remain to release: 3 weeks
+--------------------------------------------------------
+Troubles:
+ - hardware:
+ + Camera and hồng ngoại sensor not accurate enough to recognize human face and fake image
+ - software:
+ + Struggling with heroku and internet deployment.
+ + Using the lib to recognize face so it is hard to custom
+ + Time burning to much for unessential feature ? (Dont have much time)
+
+Solutions:
+ + using pyngrok instead of heroku to local deployment
+
+
+

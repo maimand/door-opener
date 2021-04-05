@@ -9,17 +9,17 @@ Estimated progress: 30%
 ------------------------------------------------------
 software:
 
-Flask app (API): in progress (70%)
-heroku deploying: in progress (50%) (still have troubles when deploying on internet)
+Flask app (API): done (using ngrock instead of heroku)
+heroku deploying: in investigating (50%) (still have troubles when deploying on internet) 
 
 Firebase realtime database: Done
 
 Mobile app: in backlog
 
-Estimated progress : 50% 
+Estimated progress : 60% 
 
 ------------------------------------------------------
-Total progress: 40%
+Total progress: 50%
 Estimate time remain to release: 3 weeks
 --------------------------------------------------------
 Troubles:

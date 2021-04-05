@@ -3,8 +3,12 @@ from werkzeug.utils import secure_filename
 import os
 import base64
 from face_recog import *
-from firebase-demo import *
+from firebase_demo import *
 
+
+#start server ngrok
+public_url = ngrok.connect(port = '8000')
+print("Here is link: ", public_url)
 
 #some CONST
 UPLOAD_FOLDER = 'uploads'
@@ -15,10 +19,6 @@ app = Flask(__name__)
 app.secret_key = "12345"
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 
-@app.route('/', methods=['GET'])
-def index():
-    return render_template("index.html", public_url=public_url)
-
 @app.route('/face-recog', methods=['POST'])
 def faceRecog():
     # check if the post request has the file part
@@ -27,8 +27,7 @@ def faceRecog():
     path = os.path.join(app.config['UPLOAD_FOLDER'], filename)
     file.save(path)
     res = findFace(path, DATA_PATH)
-    firebaseSend(path)
-    os.remove(path)
+    firebaseSend(path, name)
     return jsonify(success=True, result=res)
 
 @app.route('/register-face', methods=['POST'])

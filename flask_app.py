@@ -4,6 +4,7 @@ import os
 import base64
 from face_recog import *
 from firebase_demo import *
+from rfid import *
 
 
 #start server ngrok
@@ -13,6 +14,7 @@ print("Here is link: ", public_url)
 #some CONST
 UPLOAD_FOLDER = 'uploads'
 DATA_PATH = "faceData.json"
+RFID_PATH = "uid.json"
 
 #init and config
 app = Flask(__name__)
@@ -29,6 +31,12 @@ def faceRecog():
     res = findFace(path, DATA_PATH)
     firebaseSend(path, name)
     return jsonify(success=True, result=res)
+
+@app.route('/rfid', methods=['POST'])
+def RIFD():
+    # check if the post request has the file part
+    res = RFID(request.form["name"], RFID_PATH)
+    return jsonify(result=res)
 
 @app.route('/register-face', methods=['POST'])
 def registerFace():

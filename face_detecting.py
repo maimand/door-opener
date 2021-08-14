@@ -9,11 +9,11 @@ def faceDetecting(img):
     
     # Detect faces
     faces = face_cascade.detectMultiScale(gray, 1.1, 4)
-    
-    x = faces[0][0]
-    y = faces[0][1]
-    w = faces[0][2]
-    h = faces[0][3]
-    faceImage = img[y:y + h, x:x + w]
-    return faceImage
-        
+    if faces:
+        x = faces[0][0]
+        y = faces[0][1]
+        w = faces[0][2]
+        h = faces[0][3]
+        faceImage = img[y:y + h, x:x + w]
+        return faceImage
+    return False, 0
